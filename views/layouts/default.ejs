@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<meta charset="utf-8">
+	    <title>Проходимец</title>
+	    <link rel="stylesheet" href="style.css">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>			
+		<div class="main">	
+			<header class="header">
+				<div class="header-content">	
+					<a class="logo" href="/"></a>
+					<div class="navigation">	
+						<div class="menu">
+							<% for (var i in locals.navList) { var item = locals.navList[i]; %>
+								<a class="menu__section <%- locals.currentPage === item.url? 'selected' : '' %>" href="/<%- item.url %>"><%- item.name %></a>
+							<% } %>
+						</div>
+						<div class="social">
+								<a class="social__icon facebook" href="https://www.facebook.com/prokhodymets/" target="_blank"></a>
+								<a class="social__icon instagram" href="https://www.instagram.com/prohodymets_kiev/" target="_blank"></a>	
+						</div>
+					</div>
+					<div class="burger">
+							<div class="burger__icon"></div>
+					</div>		
+				</div>		
+			</header>
+			<div class="body">
+			<%- body %>
+			</div>
+		</div>	
+		<footer class="footer">
+			<div class="restaurante-info">
+				<div class="restaurante-info__time">
+					<p>10:00—23:00</p>
+				</div>
+				<div class="restaurante-info__adress">
+					<p>Киев, ул. Константиновская, 37</p>
+				</div>
+				<a class="restaurante-info__map" href="https://www.google.ru/maps/place/Prokhodimets/@50.468825,30.5062423,17z/data=!4m13!1m7!3m6!1s0x40d4ce6ccbe3d0eb:0x5742c2483b880536!2sKostiantynivska+St,+37,+Kyiv,+Ukraine!3b1!8m2!3d50.468825!4d30.508431!3m4!1s0x40d4ce6ccbe21791:0x85bf35ecccf5ae0b!8m2!3d50.4689609!4d30.5084352" target="_blank">Карта</a>
+			</div>
+			<div class="reserve-info">
+				<div class="reserve-info__icon"></div>
+				<div class="reserve-info__number">
+					<a href="tel:+380442227002">+38 044 222-70-02</a>
+				</div>
+			</div>
+		</footer>
+			
+	<script src="/jquery-3.2.1.min.js"></script>
+  	<script src="script.js"></script>
+	</body>
+</html>	
+
+
